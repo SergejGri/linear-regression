@@ -8,11 +8,11 @@ To measure how well the model performs, I use the Mean Squared Error method. The
 
 $$J(m, t) = \frac{1}{n} \sum_{i=1}^{n} (y_i - (m \cdot x_i + t))^2$$
 
-where
-* **$y_i$ and $x_i$**: are the actual data points
-* **$m$ (Weight/Slope)**: is the steepness of the regression line.
-* **$t$ (Bias/Intercept)**: y-axis intercept.
-* **$\alpha$ (Learning Rate)**: learning rate --> a parameter that determines the step size during optimization.
+where ...
+* $y_i$ and $x_i$: are the actual data points
+* $m$: is the steepness of the regression line (weight / slope).
+* $t$: is the y-axis intercept
+* $\alpha$: is the learning rate. A parameter that determines the step size during optimization.
 
 
 The process of squaring the differences serves two main purposes:
@@ -20,3 +20,8 @@ The process of squaring the differences serves two main purposes:
 2.  **Penalizing Outliers**: Larger errors result in a significantly higher penalty, forcing the model to prioritize reducing big gaps between predicted and actual values.
 
 The objective of the training process is to "tweak" $m$ and $t$ to find the minimum possible value for $J(m, t)$, resulting in the most accurate prediction line possible given the data.
+
+
+<p align="center">
+  <img src="plots/lin_regression.png" width="600">
+</p>
