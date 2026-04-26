@@ -16,7 +16,6 @@ import plotter
 
 def gradient_descent(x, y, m, t, alpha):
     N = len(x)
-
     y_pred = m * x + t
 
     dm = (-2/N) * np.sum((y - y_pred) * x)
@@ -32,29 +31,36 @@ def gradient_descent(x, y, m, t, alpha):
 
 def train(x, y, m, t, alpha, epochs):
     MSE = np.zeros((epochs, 2))
-   
-    for i in range(epochs):
+    history = {"epoch": [], "m": [], "t": [], "loss": []}
+
+    for e in range(epochs):
         m, t, loss = gradient_descent(x, y, m, t, alpha)
-        MSE[i] = [i , loss]
-        if i % 50 == 0:
-            print(f"epoch: {i}, MSE: {loss}")
-    return m, t, MSE
+        MSE[e] = [e , loss]
+        if e % 5 == 0:
+            print(f"epoch: {e}, MSE: {loss}")
+            history["epoch"].append(e)
+            history["m"].append(m)
+            history["t"].append(t)
+            history["loss"].append(loss)
+            plotter.dual_plot(x, y, history, final=False)
+
+    plotter.dual_plot(x, y, history, final=True)
+    return m, t, MSE, history
 
 
 def main():
     url = "data/test_variable_scatter3.csv"
     df = pd.read_csv(url)
-    epochs = 100
+    epochs = 150
     alpha = 0.00001
     m = 0.0
     t = 0.0
-
     x = df["x"].values
     y = df["y"].values
+    
+    m, t, loss, history = train(x, y, m, t, alpha, epochs)
 
-    m, t, loss = train(x, y, m, t, alpha, epochs)
-    plotter.plot(x, y, m, t, loss)
-    plt.show()
+  
       
 
 if __name__ == "__main__":

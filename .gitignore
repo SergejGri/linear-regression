@@ -51,6 +51,13 @@ coverage.xml
 .pytest_cache/
 cover/
 data/
+# Ignore all individual training frames
+plots/frame_*.png
+
+# But make sure the final results are NOT ignored
+!plots/lin_regression.png
+!training_progress.gif
+
 
 # Translations
 *.mo

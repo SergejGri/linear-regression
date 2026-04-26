@@ -23,5 +23,5 @@ The objective of the training process is to "tweak" $m$ and $t$ to find the mini
 
 
 <p align="center">
-  <img src="plots/lin_regression.png" width="600">
+  <img src="plots/training_progress.gif" width="600">
 </p>
