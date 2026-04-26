@@ -6,7 +6,7 @@ The primary goal of this project is to gain a understanding of linear regression
 
 To measure how well the model performs, I use the Mean Squared Error method. The loss function, denoted as $J(m, t)$, calculates the average of the squared differences between the actual values and the predicted values.
 
-$$J(w, t) = \frac{1}{n} \sum_{i=1}^{n} (y_i - (m \cdot x_i + t))^2$$
+$$J(m, t) = \frac{1}{n} \sum_{i=1}^{n} (y_i - (m \cdot x_i + t))^2$$
 
 where
 * **$y_i$ and $x_i$**: are the actual data points
