@@ -19,7 +19,7 @@ The process of squaring the differences serves two main purposes:
 1.  **Eliminating Negatives**: It ensures that positive and negative errors do not cancel each other out.
 2.  **Penalizing Outliers**: Larger errors result in a significantly higher penalty, forcing the model to prioritize reducing big gaps between predicted and actual values.
 
-The objective of the training process is to "tweak" $m$ and $t$ to find the minimum possible value for $J(m, t)$, resulting in the most accurate prediction line possible given the data.
+The objective of the training process is to tweak $m$ and $t$ to find the minimum possible value for $J(m, t)$, resulting in the most accurate prediction line possible given the data.
 
 
 <p align="center">

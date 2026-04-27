@@ -1,12 +1,12 @@
-import matplotlib.pyplot as plt
-import numpy as np
 import os
+import numpy as np
 import imageio.v2 as imageio
+import matplotlib.pyplot as plt
+
 
 def dual_plot(x, y, history, final=False):
     m = history["m"][-1]
     t = history["t"][-1]
-    loss = history["loss"][-1]
     epoch = history["epoch"][-1]
 
     fig, axs = plt.subplots(1, 2, figsize=(12, 5))
